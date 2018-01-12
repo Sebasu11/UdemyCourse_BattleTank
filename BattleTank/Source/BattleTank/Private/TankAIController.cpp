@@ -20,6 +20,7 @@ void ATankAIController::Tick(float DeltaTime)
 {
 	Super::Tick( DeltaTime );
 	//UE_LOG(LogTemp, Warning, TEXT("AIController tickinng"));
+	//AimTowardsCrosshair();
 }
 
 ATank* ATankAIController::GetControlledTank() const {
@@ -40,3 +41,4 @@ ATank* ATankAIController::GetPlayerTank() const {
 
 	return  Cast<ATank>(PlayerTankPawn);
 }
+
