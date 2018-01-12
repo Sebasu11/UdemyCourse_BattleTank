@@ -16,6 +16,12 @@ void ATankAIController::BeginPlay()
 	GetPlayerTank();
 }
 
+void ATankAIController::Tick(float DeltaTime)
+{
+	Super::Tick( DeltaTime );
+	//UE_LOG(LogTemp, Warning, TEXT("AIController tickinng"));
+}
+
 ATank* ATankAIController::GetControlledTank() const {
 
 	return Cast<ATank>(GetPawn());
