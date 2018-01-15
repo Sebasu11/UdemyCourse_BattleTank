@@ -50,8 +50,18 @@ bool ATamkPlayerController::GetSightRayHitLocation(FVector & OUTHitLocation) con
 	GetViewportSize(ViewportSizeX, ViewportSizeY);
 	
 	auto ScreenLocation = FVector2D(ViewportSizeX*CrosshairXLocation, ViewportSizeY*CrosshairYLocation);
-	UE_LOG(LogTemp, Warning, TEXT("ScreenLocation %s"), *ScreenLocation.ToString());
-	return false;
+	FVector LookDirection;
+	if (GetLookDirection(ScreenLocation, LookDirection))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("ScreenLocation %s"), *LookDirection.ToString());
+
+	}
+	return true;
 }
 
-
+bool ATamkPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector & LookDirection) const
+{
+	FVector CameraWorldLocation;
+	return DeprojectScreenPositionToWorld(ScreenLocation.X, ScreenLocation.Y, CameraWorldLocation, LookDirection);
+	
+}
