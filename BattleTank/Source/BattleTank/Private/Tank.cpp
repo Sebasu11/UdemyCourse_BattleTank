@@ -44,7 +44,7 @@ void ATank::AimtAt(FVector HitLocation)
 
 {
 
-	TankAimingComponent->AimAt(HitLocation);
+	TankAimingComponent->AimAt(HitLocation, LaunchSpeed);
 	
 	//Se mueve el LOG para el componente AIM
 	//auto OurTankName = GetName();
