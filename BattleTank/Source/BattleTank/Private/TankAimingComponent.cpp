@@ -86,7 +86,7 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection )
 	//UE_LOG(LogTemp, Warning, TEXT("%s Tank  AimRotator at %s "),*tankName, *AimAsRotator.ToString());
 
 	//Move Barrrel the right amount of frame
-	Barrel->Elevate(5);
+	Barrel->Elevate(DeltaRotator.Pitch);
 
 	//Given the max elevation speed and the frame line
 }
