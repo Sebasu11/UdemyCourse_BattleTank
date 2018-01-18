@@ -2,11 +2,11 @@
 
 #pragma once
 
-#include "Tank.h"
+
 #include "GameFramework/PlayerController.h"
 
 #include "TamkPlayerController.generated.h"//Generated always the last one
-
+class ATank;
 /**
  * 
  */
@@ -16,7 +16,6 @@ class BATTLETANK_API ATamkPlayerController : public APlayerController
 	GENERATED_BODY()
 	
 private:
-
 	ATank* GetControlledTank() const;
 
 	virtual void BeginPlay() override;

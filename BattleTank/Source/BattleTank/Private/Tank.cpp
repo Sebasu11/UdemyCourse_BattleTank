@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BattleTank.h"
+#include"TankAimingComponent.h"
 #include "Tank.h"
 
 
@@ -34,6 +35,7 @@ void ATank::Tick( float DeltaTime )
 }
 
 // Called to bind functionality to input
+
 void ATank::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 {
 	Super::SetupPlayerInputComponent(InputComponent);

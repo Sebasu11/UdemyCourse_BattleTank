@@ -7,5 +7,5 @@ void UTankBarrel::Elevate(float DegreesPerSecond)
 {
 	//Move the barrel 
 	//Given max speed
-	UE_LOG(LogTemp, Warning, TEXT(" TankBarrel called %f "), DegreesPerSecond);
+	//UE_LOG(LogTemp, Warning, TEXT(" TankBarrel called %f "), DegreesPerSecond);
 }

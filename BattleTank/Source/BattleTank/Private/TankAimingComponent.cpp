@@ -48,7 +48,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 	//UE_LOG(LogTemp, Warning, TEXT(" Firing at %f "), LaunchSpeed);
 
 	if (!Barrel) {
-		//UE_LOG(LogTemp, Warning, TEXT(" No Barrel"));
+		UE_LOG(LogTemp, Warning, TEXT(" No Barrel"));
 	return; }
 
 	//const UObject * WorldContextObject;
@@ -61,11 +61,18 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 		if (bHaveAimSolution)
 		{
 			auto AimDirection = OutLaunchVelocity.GetSafeNormal();
-			 //UE_LOG(LogTemp, Warning, TEXT(" Aiming at %s "), *AimDirection.ToString());
+			//UE_LOG(LogTemp, Warning, TEXT(" Aiming at %s "), *AimDirection.ToString());
+
+			auto Time = GetWorld()->GetTimeSeconds();
+			UE_LOG(LogTemp, Warning, TEXT("%f: Aim solution found "), Time);
+
 			MoveBarrelTowards(AimDirection);
 		}
+		else {
 	//If no solution found do nothing 
-		//UE_LOG(LogTemp, Warning, TEXT(" no solution found do nothing "));
+		auto Time = GetWorld()->GetTimeSeconds();
+		UE_LOG(LogTemp, Warning, TEXT("%f: no aim solution found "),Time);
+		}
 		}
 
 void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection )
