@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BattleTank.h"
+# include "TankBarrel.h"
 #include "TankAimingComponent.h"
 
 
@@ -15,7 +16,7 @@ UTankAimingComponent::UTankAimingComponent()
 }
 
 
-void UTankAimingComponent::SetBarrelReference(UStaticMeshComponent * BarrelToSet)
+void UTankAimingComponent::SetBarrelReference(UTankBarrel* BarrelToSet)
 {
 	Barrel = BarrelToSet;
 }
@@ -46,7 +47,9 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 	//UE_LOG(LogTemp, Warning, TEXT("%s aiming at %s from %s"), *OurTankName, *HitLocation.ToString(),*BarrelLocation);
 	//UE_LOG(LogTemp, Warning, TEXT(" Firing at %f "), LaunchSpeed);
 
-	if (!Barrel) { return; }
+	if (!Barrel) {
+		//UE_LOG(LogTemp, Warning, TEXT(" No Barrel"));
+	return; }
 
 	//const UObject * WorldContextObject;
 	FVector OutLaunchVelocity;
@@ -58,10 +61,11 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 		if (bHaveAimSolution)
 		{
 			auto AimDirection = OutLaunchVelocity.GetSafeNormal();
-			// UE_LOG(LogTemp, Warning, TEXT(" Aiming at %s "), *AimDirection.ToString());
+			 //UE_LOG(LogTemp, Warning, TEXT(" Aiming at %s "), *AimDirection.ToString());
 			MoveBarrelTowards(AimDirection);
 		}
 	//If no solution found do nothing 
+		//UE_LOG(LogTemp, Warning, TEXT(" no solution found do nothing "));
 		}
 
 void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection )
@@ -72,9 +76,10 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection )
 	auto AimAsRotator = AimDirection.Rotation();
 	auto DeltaRotator = AimAsRotator - BarrelRotator;
 
-	UE_LOG(LogTemp, Warning, TEXT("%s Tank  AimRotator at %s "),*tankName, *AimAsRotator.ToString());
+	//UE_LOG(LogTemp, Warning, TEXT("%s Tank  AimRotator at %s "),*tankName, *AimAsRotator.ToString());
 
 	//Move Barrrel the right amount of frame
+	Barrel->Elevate(5);
 
 	//Given the max elevation speed and the frame line
 }
