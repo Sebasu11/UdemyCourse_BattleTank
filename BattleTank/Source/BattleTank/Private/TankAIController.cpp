@@ -36,7 +36,7 @@ ATank* ATankAIController::GetPlayerTank() const {
 		return nullptr;
 	}
 	else {
-		UE_LOG(LogTemp, Warning, TEXT("AIController  found a tank %s"), *PlayerTankPawn->GetName());
+		//UE_LOG(LogTemp, Warning, TEXT("AIController  found a tank %s"), *PlayerTankPawn->GetName());
 	}
 
 	return  Cast<ATank>(PlayerTankPawn);
