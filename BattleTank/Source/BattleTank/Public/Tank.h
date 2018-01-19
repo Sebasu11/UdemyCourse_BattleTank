@@ -19,13 +19,20 @@ class BATTLETANK_API ATank : public APawn
 
 public:
 
-	void AimtAt(FVector HitLocation);
+	
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 		void SetBarrelReference(UTankBarrel* BarrelToSet);
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 		void SetTurretReference(UTankTurret* TurretToSet);
+
+	void AimtAt(FVector HitLocation);
+
+	UFUNCTION(BlueprintCallable, Category = Firing)
+		void Fire();
+
+
 
 protected:
 

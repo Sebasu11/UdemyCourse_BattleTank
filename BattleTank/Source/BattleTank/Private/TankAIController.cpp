@@ -12,7 +12,7 @@ void ATankAIController::BeginPlay()
 		UE_LOG(LogTemp, Warning, TEXT("AIController not possesing a tank"));
 	}
 	else {
-		UE_LOG(LogTemp, Warning, TEXT("AIController BeginPlay %s"), *ControlledTank->GetName());
+		//UE_LOG(LogTemp, Warning, TEXT("AIController BeginPlay %s"), *ControlledTank->GetName());
 	}
 	GetPlayerTank();
 }
