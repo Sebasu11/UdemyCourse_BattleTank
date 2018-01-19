@@ -1,11 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "BattleTank.h"
-<<<<<<< HEAD
 #include "TankBarrel.h"
 #include "TankTurret.h"
-=======
->>>>>>> 08bd16f0103c98e3845f17fa6bd5aaccae39ba99
 #include "TankAimingComponent.h"
 
 
@@ -20,7 +17,6 @@ UTankAimingComponent::UTankAimingComponent()
 }
 
 
-<<<<<<< HEAD
 void UTankAimingComponent::SetBarrelReference(UTankBarrel* BarrelToSet)
 {
 	if (!BarrelToSet) { return; }
@@ -33,8 +29,6 @@ void UTankAimingComponent::SetTurretReference(UTankTurret* TurretToSet)
 	Turret = TurretToSet;
 }
 
-=======
->>>>>>> 08bd16f0103c98e3845f17fa6bd5aaccae39ba99
 // Called when the game starts
 void UTankAimingComponent::BeginPlay()
 {
@@ -53,7 +47,6 @@ void UTankAimingComponent::TickComponent( float DeltaTime, ELevelTick TickType, 
 	// ...
 }
 
-<<<<<<< HEAD
 void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 {
 	//auto OurTankName = GetOwner()->GetName();
@@ -105,11 +98,5 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection )
 	Turret->Rotate(DeltaRotator.Yaw);
 
 	//Given the max elevation speed and the frame line
-=======
-void UTankAimingComponent::AimAt(FVector WorldSpaceAim)
-{
-	auto OurTankName = GetName();
-	UE_LOG(LogTemp, Warning, TEXT("%s aiming at %s"), *OurTankName, *HitLocation.ToString());
->>>>>>> 08bd16f0103c98e3845f17fa6bd5aaccae39ba99
 }
 

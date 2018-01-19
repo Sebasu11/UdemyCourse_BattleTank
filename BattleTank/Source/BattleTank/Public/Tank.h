@@ -2,7 +2,6 @@
 
 #pragma once
 
-#include "TankAimingComponent.h"
 #include "GameFramework/Pawn.h"
 #include "Tank.generated.h"
 
@@ -30,7 +29,6 @@ public:
 
 	void AimtAt(FVector HitLocation);
 
-<<<<<<< HEAD
 	UFUNCTION(BlueprintCallable, Category = Firing)
 		void Fire();
 
@@ -41,10 +39,6 @@ protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
 
 
-=======
-protected:
-	UTankAimingComponent* TankAimingComponent = nullptr;
->>>>>>> 08bd16f0103c98e3845f17fa6bd5aaccae39ba99
 private:
 	// Sets default values for this pawn's properties
 	ATank();
