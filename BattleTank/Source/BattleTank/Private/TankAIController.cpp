@@ -21,7 +21,15 @@ void ATankAIController::Tick(float DeltaTime)
 {
 	Super::Tick( DeltaTime );
 	//UE_LOG(LogTemp, Warning, TEXT("AIController tickinng"));
-	GetControlledTank()->AimtAt(GetPlayerTank()->GetActorLocation());
+	if (GetControlledTank()) {
+		
+		//Move Barrel
+
+		//Aim at the player location
+		GetControlledTank()->AimtAt(GetPlayerTank()->GetActorLocation());
+
+		//Fire 
+	}
 }
 
 ATank* ATankAIController::GetControlledTank() const {
