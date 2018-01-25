@@ -57,7 +57,7 @@ private:
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
 	UPROPERTY(EditAnywhere, Category = Firing)
-	float LaunchSpeed = 4000.0f; // 40 m/s
+	float LaunchSpeed = 4.0f; // 40 m/s
 
 	UPROPERTY(EditAnywhere, Category = Setup)
 		//UClass* ProjectileBlueprint; // Risky suggetion, designer could choose the wrong Class
