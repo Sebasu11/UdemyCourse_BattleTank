@@ -18,5 +18,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void ThrottleRequest(float Throttle);
+
+	//Max force pair track in newton
+	UPROPERTY(EditDefaultsOnly)
+		float TrackMaxDrivingForce = 400000;
 	
 };
