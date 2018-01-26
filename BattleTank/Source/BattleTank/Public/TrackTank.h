@@ -20,7 +20,7 @@ public:
 	void ThrottleRequest(float Throttle);
 
 	//Max force pair track in newton
-	UPROPERTY(EditDefaultsOnly)
-		float TrackMaxDrivingForce = 400000;
+	UPROPERTY(EditDefaultsOnly, Category = TrackForce)
+	float TrackMaxDrivingForce = 40000000;
 	
 };
