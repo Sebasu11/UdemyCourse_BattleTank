@@ -79,7 +79,7 @@ void ATank::Fire()
 		LastFireTime = FPlatformTime::Seconds();
 	}
 	else {
-		UE_LOG(LogTemp, Warning, TEXT(" Nor Barrel")); return;
+		//UE_LOG(LogTemp, Warning, TEXT(" Nor Barrel")); return;
 	}
 }
 
