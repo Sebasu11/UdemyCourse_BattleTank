@@ -12,10 +12,18 @@ void UTankMovementComponent::IntentdMoveForward(float Throw) {
 	UE_LOG(LogTemp, Warning, TEXT("Intend move forward thorw %f"), Throw);
 }
 
+void UTankMovementComponent::IntentdMoveRight(float Throw) {
+
+	if (!LeftTrack || !RightTrack) { return; }
+	LeftTrack->ThrottleRequest(Throw);
+	RightTrack->ThrottleRequest(-Throw);
+
+	UE_LOG(LogTemp, Warning, TEXT("Intend move forward thorw %f"), Throw);
+}
+
+
 void UTankMovementComponent::Initialise(UTrackTank * LeftTrackToSet, UTrackTank * RightTrackToSet)
 {
-
-	if (!LeftTrackToSet || !RightTrackToSet) { return; }
 	RightTrack = RightTrackToSet;
 	LeftTrack = LeftTrackToSet;
 }
