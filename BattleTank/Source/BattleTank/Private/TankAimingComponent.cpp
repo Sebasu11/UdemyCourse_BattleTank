@@ -56,7 +56,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 	//UE_LOG(LogTemp, Warning, TEXT(" Firing at %f "), LaunchSpeed);
 
 	if (!Barrel) {
-		UE_LOG(LogTemp, Warning, TEXT(" No Barrel"));
+		//UE_LOG(LogTemp, Warning, TEXT(" No Barrel"));
 	return; }
 
 	//const UObject * WorldContextObject;
@@ -79,7 +79,7 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 		else {
 	//If no solution found do nothing 
 		auto Time = GetWorld()->GetTimeSeconds();
-		UE_LOG(LogTemp, Warning, TEXT("%f: no aim solution found "),Time);
+		//UE_LOG(LogTemp, Warning, TEXT("%f: no aim solution found "),Time);
 		}
 		}
 
