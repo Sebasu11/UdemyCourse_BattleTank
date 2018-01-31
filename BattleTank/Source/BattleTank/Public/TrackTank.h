@@ -16,11 +16,11 @@ class BATTLETANK_API UTrackTank : public UStaticMeshComponent
 	
 public:
 
-	UFUNCTION(BlueprintCallable, Category = Setup)
+	UFUNCTION(BlueprintCallable, Category = "Setup")
 	void ThrottleRequest(float Throttle);
 
 	//Max force pair track in newton
-	UPROPERTY(EditDefaultsOnly, Category = TrackForce)
+	UPROPERTY(EditDefaultsOnly, Category = "TrackForce")
 	float TrackMaxDrivingForce = 40000000;
 	
 };
