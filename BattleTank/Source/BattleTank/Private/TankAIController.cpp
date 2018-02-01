@@ -16,7 +16,7 @@ void ATankAIController::Tick(float DeltaTime)
 	//UE_LOG(LogTemp, Warning, TEXT("AIController tickinng"));
 	auto PlayerTank = Cast<ATank>(GetWorld()->GetFirstPlayerController()->GetPawn());
 	auto ControlledTank = Cast<ATank>(GetPawn());
-	if (PlayerTank) {
+	if (ensure(PlayerTank)) {
 		
 		
 		//MoveTank

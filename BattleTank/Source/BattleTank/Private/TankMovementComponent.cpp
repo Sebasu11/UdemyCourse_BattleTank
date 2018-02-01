@@ -5,7 +5,7 @@
 #include "TankMovementComponent.h"
 
 void UTankMovementComponent::IntentdMoveForward(float Throw) {
-
+	if (!ensure(LeftTrack && RightTrack)) { return; }
 	LeftTrack->ThrottleRequest(Throw);
 	RightTrack->ThrottleRequest(Throw);
 
@@ -14,7 +14,7 @@ void UTankMovementComponent::IntentdMoveForward(float Throw) {
 
 void UTankMovementComponent::IntentdMoveRight(float Throw) {
 
-	if (!LeftTrack || !RightTrack) { return; }
+	if (!ensure(LeftTrack && RightTrack)) { return; }
 	LeftTrack->ThrottleRequest(Throw);
 	RightTrack->ThrottleRequest(-Throw);
 
