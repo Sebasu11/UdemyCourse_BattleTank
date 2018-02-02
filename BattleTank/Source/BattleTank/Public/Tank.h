@@ -10,7 +10,6 @@ class UTankBarrel;
 
 class UTankAimingComponent;
 
-class UTankMovementComponent;
 
 class UTankTurret;
 
@@ -36,9 +35,6 @@ protected:
 
 	UPROPERTY(BlueprintReadOnly)
 	UTankAimingComponent* TankAimingComponent = nullptr;
-
-	UPROPERTY(BlueprintReadOnly)
-	UTankMovementComponent* TankMovementComponent = nullptr;
 
 
 private:
