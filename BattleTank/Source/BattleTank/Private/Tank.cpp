@@ -16,39 +16,3 @@ ATank::ATank()
 }
 
 
-// Called every frame
-void ATank::Tick( float DeltaTime )
-{
-	Super::Tick( DeltaTime );
-
-}
-
-void ATank::BeginPlay()
-{
-	Super::BeginPlay();
-}
-
-
-void ATank::Fire()
-{
-	if (!ensure(Barrel)) { return; }
-	//auto Time = GetWorld()->GetTimeSeconds();
-	//UE_LOG(LogTemp, Warning, TEXT("%f Tank fires"),Time);
-	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeInSeconds;
-
-	if ( isReloaded) {
-		
-			// Spawn Projectile at the socket location
-			auto Projectile = GetWorld()->SpawnActor<AProjectile>(
-				ProjectileBlueprint,
-				Barrel->GetSocketLocation(FName("Projectile")),
-				Barrel->GetSocketRotation(FName("Projectile")));
-
-		Projectile->LaunchProjectile(LaunchSpeed);
-		LastFireTime = FPlatformTime::Seconds();
-	}
-	else {
-		//UE_LOG(LogTemp, Warning, TEXT(" Nor Barrel")); return;
-	}
-}
-
