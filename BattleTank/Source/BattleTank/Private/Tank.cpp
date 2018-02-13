@@ -3,7 +3,6 @@
 #include "BattleTank.h"
 #include "TankBarrel.h"
 #include "Projectile.h"
-#include"TankAimingComponent.h"
 #include "Tank.h"
 
  
@@ -27,19 +26,8 @@ void ATank::Tick( float DeltaTime )
 void ATank::BeginPlay()
 {
 	Super::BeginPlay();
-	TankAimingComponent = FindComponentByClass<UTankAimingComponent>();
 }
 
-void ATank::AimtAt(FVector HitLocation)
-
-{
-	if (!ensure(TankAimingComponent)) { return; }
-	TankAimingComponent->AimAt(HitLocation, LaunchSpeed);
-	
-	//Se mueve el LOG para el componente AIM
-	//auto OurTankName = GetName();
-	//UE_LOG(LogTemp, Warning, TEXT("%s aiming at %s"), *OurTankName, *HitLocation.ToString());
-}
 
 void ATank::Fire()
 {
